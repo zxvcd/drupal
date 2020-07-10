@@ -1,0 +1,32 @@
+{% extends 'page.html.twig' %}
+
+
+
+{% block content %}
+<div id="main" class="{{ container }}">
+  {{ page.breadcrumb }}
+  <div class="row row-offcanvas row-offcanvas-left clearfix">
+    <main{{ content_attributes }}>
+      <section class="section container">
+        <a id="main-content" tabindex="-1"></a>
+        {{ page.content.Title }}
+      </section>
+    </main>
+    {% if page.sidebar_first %}
+    <div{{ sidebar_first_attributes }}>
+      <aside class="section" role="complementary">
+        {{ page.sidebar_first }}
+      </aside>
+    </div>
+    {% endif %}
+    {% if page.sidebar_second %}
+    <div{{ sidebar_second_attributes }}>
+      <aside class="section" role="complementary">
+        {{ page.sidebar_second }}
+      </aside>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
+
